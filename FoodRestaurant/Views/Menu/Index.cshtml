@@ -1,0 +1,28 @@
+﻿
+@model List<FoodRestaurant.Models.Dish>
+@{
+
+	ViewData["Title"] = "Menu";
+}
+<div class="container">
+	<div class="row">
+		@foreach (var item in Model)
+		{
+			<div class="col-6">
+				<div>
+					@item.Name
+				</div>
+				<div>
+					<img src="@item.imageUrl" style="width: 30%; height:30%;">
+				</div>
+				<div>
+					@item.price ₽
+				</div>
+				<div>
+					<a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+				</div>
+			</div>	
+		
+		}
+	</div>
+</div>
