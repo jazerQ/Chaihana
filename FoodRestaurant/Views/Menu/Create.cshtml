@@ -1,0 +1,37 @@
+﻿@model DishCreateViewModel
+@{
+	ViewData["Title"] = "Create";
+}
+<h3 class="d-flex justify-content-center">Create an Dish</h3>
+<form asp-action="Create" method="post">
+	<div class="d-flex justify-content-center">
+		<label for="DishName">Name</label>
+		<input type="text" asp-for="Dish.Name"/>
+	</div>
+	<div class="d-flex justify-content-center">
+		<label for="DishImageUrl">Url Of Image</label>
+		<input type="text" asp-for="Dish.imageUrl"/>
+	</div>
+	<div class="d-flex justify-content-center">
+		<label for="DishPrice">Price of Dish</label>
+		<input type="number" asp-for="Dish.price"/>
+	</div>
+	<div class="d-flex justify-content-center">
+		<label for="Ingridients">Выберите ингридиенты</label>
+		@if(Model.Ingridients != null){
+			<select asp-for="SelectedIngridientsId" multiple="multiple">
+				@foreach (var item in Model.Ingridients)
+				{
+					<option value="@item.Id">@item.Name</option>
+				}
+			</select>
+		}
+		else
+		{
+			<p>No ingridients!</p>
+		}
+	</div>
+	<div class="d-flex justify-content-center">
+		<button class="btn btn-info" type="submit">Создать</button>
+	</div>
+</form>
