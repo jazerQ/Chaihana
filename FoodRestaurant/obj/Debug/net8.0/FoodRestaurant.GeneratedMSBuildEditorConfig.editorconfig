@@ -38,12 +38,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/source/repos/FoodRestaurant/FoodRestaurant/Views/Menu/CreateIngredient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxDcmVhdGVJbmdyZWRpZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/FoodRestaurant/FoodRestaurant/Views/Menu/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/source/repos/FoodRestaurant/FoodRestaurant/Views/Menu/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/FoodRestaurant/FoodRestaurant/Views/Menu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/FoodRestaurant/FoodRestaurant/Views/Menu/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/FoodRestaurant/FoodRestaurant/Views/Shared/Error.cshtml]

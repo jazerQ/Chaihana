@@ -70,5 +70,46 @@ namespace FoodRestaurant.Controllers
 			model.Ingridients = await _menuContext.Ingridients.ToListAsync();
 			return View(model);
 		}
+		public async Task<IActionResult> CreateIngredient() 
+		{
+			Ingridients ingridient = new Ingridients { DishIngridients = await _menuContext.DishIngridients.ToListAsync() };
+			return View(ingridient);
+		}
+		[HttpPost]
+		public async Task<IActionResult> CreateIngredient([Bind("Id, Name, DishIngridients")]Ingridients ingridients) 
+		{
+			/*if (!ModelState.IsValid) 
+			{
+				foreach(var err in ModelState.Values.SelectMany(e => e.Errors)) 
+				{
+					Console.WriteLine(err.ErrorMessage);
+				}
+			}*/
+			if (string.IsNullOrEmpty(ingridients.Name))
+			{
+				return View(ingridients);
+			}
+			await _menuContext.Ingridients.AddAsync(ingridients);
+			await _menuContext.SaveChangesAsync();
+			return RedirectToAction("Index");
+			
+		}
+		public async Task<IActionResult> Delete(int id) 
+		{
+			Dish? dish = await _menuContext.Dishes.FirstOrDefaultAsync(x => x.Id == id);
+			return View(dish);
+
+		}
+		public async Task<IActionResult> DeleteConfirmed(int id) 
+		{
+			var item = await _menuContext.Dishes.FindAsync(id);
+			if (item != null) 
+			{
+				_menuContext.Remove(item);
+				await _menuContext.SaveChangesAsync();
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Delete", id);
+		}
 	}
 }

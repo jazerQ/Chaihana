@@ -1,0 +1,13 @@
+﻿@model FoodRestaurant.Models.Dish
+@{
+	ViewData["Title"] = "Delete " + Model.Name;
+}
+<div class="d-flex justify-content-center">
+	<h3>Deleting data</h3>
+	<p> are you sure you want to delete this? </p>
+	<p>@Model.Id - @Model.Name</p>
+</div>
+<form asp-action="DeleteConfirmed">
+	<input type="hidden" asp-for="Id"/>
+	<input type="submit" value="Delete"/>
+</form>
