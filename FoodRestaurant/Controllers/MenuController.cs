@@ -111,5 +111,50 @@ namespace FoodRestaurant.Controllers
 			}
 			return RedirectToAction("Delete", id);
 		}
+		public async Task<IActionResult> Update(int id) 
+		{
+			Dish? item = _menuContext.Dishes.FirstOrDefault(x => x.Id == id);
+			if (item != null)
+			{
+				List<int> selectIng = new List<int>();
+				foreach(var di in _menuContext.DishIngridients) 
+				{
+					if (item.Id == di.DishId) {
+						selectIng.Add(di.IngridiendId);
+					}
+				}
+				DishCreateViewModel dishCreateViewModel = new DishCreateViewModel { Dish = item, Ingridients = await _menuContext.Ingridients.ToListAsync(), SelectedIngridientsId = selectIng };
+				return View(dishCreateViewModel);
+			}
+			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Update(DishCreateViewModel dishCreateViewModel) 
+		{
+
+			_menuContext.Dishes.Update(dishCreateViewModel.Dish);
+			
+			
+			var dishIngredients = await _menuContext.DishIngridients.Where(di => di.DishId == dishCreateViewModel.Dish.Id).ToListAsync();
+
+
+
+			foreach (var ingridientId in dishCreateViewModel.SelectedIngridientsId)
+			{
+				var currentDi = dishIngredients.FirstOrDefault(di => di.IngridiendId == ingridientId);
+				if (currentDi == null)
+				{
+					_menuContext.DishIngridients.Add(new DishIngridient { IngridiendId = ingridientId, DishId = dishCreateViewModel.Dish.Id });
+
+				}
+				
+			}
+			var RemoveDi = await _menuContext.DishIngridients.Where(x => x.DishId == dishCreateViewModel.Dish.Id && !dishCreateViewModel.SelectedIngridientsId.Contains(x.IngridiendId)).ToListAsync();
+			_menuContext.DishIngridients.RemoveRange(RemoveDi);
+			await _menuContext.SaveChangesAsync();
+			return RedirectToAction("Index");
+			
+		}
 	}
 }
