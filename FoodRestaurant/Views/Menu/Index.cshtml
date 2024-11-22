@@ -3,6 +3,7 @@
 @{
 
 	ViewData["Title"] = "Menu";
+	ViewData["Controller"] = "Menu";
 }
 <div class="container">
 	<div class="row">
@@ -27,5 +28,8 @@
 			</div>	
 		
 		}
+	</div>
+	<div style="margin-top: 20px;" class="d-flex justify-content-center">
+		<a class="btn btn-info" asp-action="Create">Create new Dish!</a>
 	</div>
 </div>

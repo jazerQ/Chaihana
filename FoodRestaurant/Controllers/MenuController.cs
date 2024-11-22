@@ -70,11 +70,11 @@ namespace FoodRestaurant.Controllers
 			model.Ingridients = await _menuContext.Ingridients.ToListAsync();
 			return View(model);
 		}
-		public async Task<IActionResult> CreateIngredient() 
+		/*public async Task<IActionResult> CreateIngredient() 
 		{
 			Ingridients ingridient = new Ingridients { DishIngridients = await _menuContext.DishIngridients.ToListAsync() };
 			return View(ingridient);
-		}
+		}*/
 		[HttpPost]
 		public async Task<IActionResult> CreateIngredient([Bind("Id, Name, DishIngridients")]Ingridients ingridients) 
 		{
@@ -100,6 +100,7 @@ namespace FoodRestaurant.Controllers
 			return View(dish);
 
 		}
+		/*public async Task<IActionResult> DeleteIngredient()*/
 		public async Task<IActionResult> DeleteConfirmed(int id) 
 		{
 			var item = await _menuContext.Dishes.FindAsync(id);
