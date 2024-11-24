@@ -1,5 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model FoodRestaurant.Models.Ingridients
 @{
+	ViewData["Title"] = "Delete";
+	ViewData["Controller"] = "Ingredient";
 }
+<h3> Are you sure you want to delete ingredient</h3>
+<p>@Model.Name - @Model.Id</p>
+<form asp-action="DeleteConfirmed" method="post">
+	<input type="hidden" asp-for="Id"/>
+	<input type="submit" value="Delete"></input>
+</form>

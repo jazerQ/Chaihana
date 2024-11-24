@@ -27,15 +27,32 @@ namespace FoodRestaurant.Controllers
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> Create(Ingridients ingridients) 
+		public async Task<IActionResult> Create(Ingridients ingridients)
 		{
-			if (string.IsNullOrEmpty(ingridients.Name)) 
+			if (string.IsNullOrEmpty(ingridients.Name))
 			{
 				return View(ingridients);
 			}
 			await _menuContext.Ingridients.AddAsync(ingridients);
 			await _menuContext.SaveChangesAsync();
 			return RedirectToAction("Index");
-		} 
+		}
+		public async Task<IActionResult> Delete(int id)
+		{
+			var ingredientRemove = await _menuContext.Ingridients.FirstOrDefaultAsync(ing => ing.Id == id);
+			return View(ingredientRemove);
+		}
+		[HttpPost]
+		public async Task<IActionResult> DeleteConfirmed(int id) 
+		{
+			var shouldDelete = await _menuContext.Ingridients.FindAsync(id);
+			if (shouldDelete != null) 
+			{
+				_menuContext.Remove(shouldDelete);
+				await _menuContext.SaveChangesAsync();
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Delete",id);
+		}
 	}
 }
