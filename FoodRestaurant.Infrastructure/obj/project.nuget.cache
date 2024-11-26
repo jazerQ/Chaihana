@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "e9Q/Rv/OaKZea7WiuCz+6fbEk0gZv7pl08Oka9lh4tTxtbgb588imcP3Vr6CWq6ooh+QyNz4+fgxcWS6+dO50w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant.Infrastructure\\FoodRestaurant.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

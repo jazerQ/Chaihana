@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant\\FoodRestaurant.csproj": {}
+    "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant.Infrastructure\\FoodRestaurant.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant\\FoodRestaurant.csproj": {
+    "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant.Infrastructure\\FoodRestaurant.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant\\FoodRestaurant.csproj",
-        "projectName": "FoodRestaurant",
-        "projectPath": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant\\FoodRestaurant.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant.Infrastructure\\FoodRestaurant.Infrastructure.csproj",
+        "projectName": "FoodRestaurant.Infrastructure",
+        "projectPath": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant.Infrastructure\\FoodRestaurant.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\FoodRestaurant\\FoodRestaurant.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,20 +53,6 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -81,9 +67,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

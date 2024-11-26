@@ -43,16 +43,34 @@ namespace FoodRestaurant.Controllers
 			return View(ingredientRemove);
 		}
 		[HttpPost]
-		public async Task<IActionResult> DeleteConfirmed(int id) 
+		public async Task<IActionResult> DeleteConfirmed(int id)
 		{
 			var shouldDelete = await _menuContext.Ingridients.FindAsync(id);
-			if (shouldDelete != null) 
+			if (shouldDelete != null)
 			{
 				_menuContext.Remove(shouldDelete);
 				await _menuContext.SaveChangesAsync();
 				return RedirectToAction("Index");
 			}
-			return RedirectToAction("Delete",id);
+			return RedirectToAction("Delete", id);
+		}
+		public IActionResult Update(int id)
+		{
+			var ing = _menuContext.Ingridients.FirstOrDefault(x => x.Id == id);
+			if (ing != null) {
+				return View(ing);
+			}
+			return RedirectToAction("Index");
+		}
+		[HttpPost]
+		public async Task<IActionResult> Update(Ingridients ingridients) 
+		{
+			_menuContext.Ingridients.Update(ingridients);
+			await _menuContext.SaveChangesAsync();
+			return RedirectToAction("Index");
+			
+			
+
 		}
 	}
 }

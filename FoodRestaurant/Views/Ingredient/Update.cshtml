@@ -1,0 +1,17 @@
+﻿@model FoodRestaurant.Models.Ingridients
+@{
+	ViewData["Title"] = "Updating";
+	ViewData["Controller"] = "Ingredient";
+}
+
+<h3>Update <b>@Model.Name</b> Ingredient</h3>
+<form asp-action="Update" method="post">
+	<input type="hidden" asp-for="Id" value="@Model.Id" />
+	<div class="d-flex justify-content-center">
+		<label for="Name">Name</label>
+		<input type="text" asp-for="Name" value="@Model.Name"/>
+	</div>
+	<div class="d-flex justify-content-center">
+		<button type="submit">Add</button>
+	</div>
+</form>

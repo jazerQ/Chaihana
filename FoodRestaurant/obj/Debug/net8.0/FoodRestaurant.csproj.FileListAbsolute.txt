@@ -167,3 +167,4 @@ C:\Users\user\source\repos\FoodRestaurant\FoodRestaurant\obj\Debug\net8.0\refint
 C:\Users\user\source\repos\FoodRestaurant\FoodRestaurant\obj\Debug\net8.0\FoodRestaurant.pdb
 C:\Users\user\source\repos\FoodRestaurant\FoodRestaurant\obj\Debug\net8.0\FoodRestaurant.genruntimeconfig.cache
 C:\Users\user\source\repos\FoodRestaurant\FoodRestaurant\obj\Debug\net8.0\ref\FoodRestaurant.dll
+C:\Users\user\source\repos\FoodRestaurant\FoodRestaurant\bin\Debug\net8.0\BCrypt.Net-Next.dll
